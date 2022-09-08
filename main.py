@@ -12,7 +12,7 @@ import backend as bk
 HEIGHT = 525
 WIDTH = 700
 
-class ProjectList(bk.BackEnd):
+class ProjectList():
      
     def __init__(self):
         self.my_database = bk.BackEnd()

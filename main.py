@@ -6,7 +6,7 @@ import random
 from tkinter import CENTER, E, END, RIGHT, W, Y, Button, Entry, Label, Scrollbar, ttk
 from tkinter import messagebox
 from tkinter.messagebox import NO
-import backend as bk
+import database as bk
 
 
 HEIGHT = 525

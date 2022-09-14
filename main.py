@@ -1,11 +1,7 @@
-from email import message
-from select import select
-from textwrap import fill
 import tkinter as tk
 import random
 from tkinter import CENTER, E, END, RIGHT, W, Y, Button, Entry, Label, Scrollbar, ttk
 from tkinter import messagebox
-from tkinter.messagebox import NO
 import database as bk
 
 
@@ -101,7 +97,7 @@ class ProjectList():
         else:
             if (current_val) % 2 == 0:
                 #print(self.to_do.get(), self.programming_lang.get(), self.start_date.get(), self.target_date.get())
-                capitalise_title = " ".join(title.capitalize() for title in self.to_do.get().split())
+                capitalise_title = " ".join(title[0].upper()+title[1:] for title in self.to_do.get().split())
                 self.database_treeview.insert(parent='', 
                                                 index='end', 
                                                 iid=None, 
@@ -124,7 +120,7 @@ class ProjectList():
                 self.refresh()
             else:
                 #print(self.to_do.get(), self.programming_lang.get(), self.start_date.get(), self.target_date.get())
-                capitalise_title = " ".join(title.capitalize() for title in self.to_do.get().split())
+                capitalise_title = " ".join(title[0].upper()+title[1:] for title in self.to_do.get().split())
                 self.database_treeview.insert(parent='', 
                                                 index='end', 
                                                 iid=None, 

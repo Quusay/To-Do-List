@@ -40,7 +40,3 @@ class BackEnd:
     def incompletedProject(self, id):
         self.pl.executemany("""UPDATE projects SET completed = "No" WHERE oid = ?""", [(a,) for a in id])
         self.project_list.commit()
-
-# if __name__ == "__main__":
-#     projectDatabase = BackEnd()
-#     projectDatabase.run()

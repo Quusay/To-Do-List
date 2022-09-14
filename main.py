@@ -228,12 +228,26 @@ class ProjectList():
                     items.clear()
                 return self.randomise()
             self.database_treeview.selection_set(rand_opt)
+            self.to_do.delete(0,tk.END)
+            self.programming_lang.delete(0,tk.END)
+            self.start_date.delete(0,tk.END)
+            self.target_date.delete(0,tk.END)
+            
+            row_id = self.database_treeview.selection()
+            select = self.database_treeview.item(row_id, 'values')
+            # print(select)
+
+            self.to_do.insert(0,select[0])
+            self.programming_lang.insert(0,select[1])
+            self.start_date.insert(0,select[2])
+            self.target_date.insert(0,select[3])
             hi = " ".join(w.capitalize() for w in self.database_treeview.item(rand_opt)['values'][0].split())
                 
             messagebox.showinfo(title="Project", message=hi)
             items.append(rand_opt)
         except IndexError:
             tk.messagebox.showinfo(title="Error", message="Can only randomly select projects with no start or target date", icon='warning')
+            
         
         #Button functionality 
     def button_functions(self): 

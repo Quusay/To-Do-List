@@ -251,28 +251,28 @@ class ProjectList():
         
         #Button functionality 
     def button_functions(self): 
-        self.add_button = Button(self.buttons_frame, text="Insert", bg="lightsteelblue3", font=("DM Sans", 13, "italic"), borderwidth=1, command = self.add_record)
-        self.add_button.grid(row=2, column=0, padx=10, pady=20)
+        add_button = Button(self.buttons_frame, text="Insert", bg="lightsteelblue3", font=("DM Sans", 13, "italic"), borderwidth=1, command = self.add_record)
+        add_button.grid(row=2, column=0, padx=10, pady=20)
         
-        self.update_button = Button(self.buttons_frame, text="Update", bg="lightsteelblue3", font=("DM Sans", 13, "italic"), borderwidth=1, command = self.update_record)
-        self.update_button.grid(row=2, column=1, padx=10, pady=20)
+        update_button = Button(self.buttons_frame, text="Update", bg="lightsteelblue3", font=("DM Sans", 13, "italic"), borderwidth=1, command = self.update_record)
+        update_button.grid(row=2, column=1, padx=10, pady=20)
         
-        self.delete_button = Button(self.buttons_frame, text="Delete", bg="lightsteelblue3", font=("DM Sans", 13, "italic"), borderwidth=1, command = self.delete_records)
-        self.delete_button.grid(row=2, column=2, padx=10, pady=20)
+        delete_button = Button(self.buttons_frame, text="Delete", bg="lightsteelblue3", font=("DM Sans", 13, "italic"), borderwidth=1, command = self.delete_records)
+        delete_button.grid(row=2, column=2, padx=10, pady=20)
         
-        self.completed_button = Button(self.buttons_frame, text="Complete", bg="lightsteelblue3", font=("DM Sans", 13, "italic"), borderwidth=1, command = self.complete_selected_projects)
-        self.completed_button.grid(row=2, column=3, padx=10, pady=20)
+        completed_button = Button(self.buttons_frame, text="Complete", bg="lightsteelblue3", font=("DM Sans", 13, "italic"), borderwidth=1, command = self.complete_selected_projects)
+        completed_button.grid(row=2, column=3, padx=10, pady=20)
         
-        self.incompleted_button = Button(self.buttons_frame, text="Incomplete", bg="lightsteelblue3", font=("DM Sans", 13, "italic"), borderwidth=1, command = self.incomplete_selected_projects)
-        self.incompleted_button.grid(row=2, column=4, padx=10, pady=20)
+        incompleted_button = Button(self.buttons_frame, text="Incomplete", bg="lightsteelblue3", font=("DM Sans", 13, "italic"), borderwidth=1, command = self.incomplete_selected_projects)
+        incompleted_button.grid(row=2, column=4, padx=10, pady=20)
         
-        self.random_button = Button(self.buttons_frame, text="Randomise", bg="lightsteelblue3", font=("DM Sans", 13, "italic"), borderwidth=1, command = self.randomise)
-        self.random_button.grid(row=2, column=5, padx=10, pady=20)
+        random_button = Button(self.buttons_frame, text="Randomise", bg="lightsteelblue3", font=("DM Sans", 13, "italic"), borderwidth=1, command = self.randomise)
+        random_button.grid(row=2, column=5, padx=10, pady=20)
         
-        self.reset_button = Button(self.buttons_frame, text="Reset", bg="lightsteelblue3", font=("DM Sans", 13, "italic"), borderwidth=1, command = self.refresh)
-        self.reset_button.grid(row=2, column=6, padx=10, pady=20)
+        reset_button = Button(self.buttons_frame, text="Reset", bg="lightsteelblue3", font=("DM Sans", 13, "italic"), borderwidth=1, command = self.refresh)
+        reset_button.grid(row=2, column=6, padx=10, pady=20)
     
-        self.database_treeview.bind('<Double-Button-1>',self.selected_records)
+        self.database_treeview.bind('<ButtonRelease-1>',self.selected_records)
     #Shows the treeview with rows and headings
     def display_database_treeview(self):
         tree_scroll_bar = Scrollbar(self.database_frame, orient='vertical')
